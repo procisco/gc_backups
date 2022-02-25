@@ -1,8 +1,15 @@
 !
+
+!
 version 15.6
-service timestamps debug datetime msec
+service nagle
+no service pad
+service tcp-keepalives-in
+service tcp-keepalives-out
+service timestamps debug datetime msec localtime show-timezone
 service timestamps log datetime msec
-no service password-encryption
+service password-encryption
+service sequence-numbers
 !
 hostname R1
 !
@@ -10,7 +17,7 @@ boot-start-marker
 boot-end-marker
 !
 !
-enable password netenable
+enable password 7 1217000317050D06262E
 !
 no aaa new-model
 ethernet lmi ce
@@ -45,7 +52,7 @@ multilink bundle-name authenticated
 !
 !
 !
-username netadmin privilege 15 password 0 netadmin
+username netadmin privilege 15 password 7 130B12060A08092325
 !
 redundancy
 !
